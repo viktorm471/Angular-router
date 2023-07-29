@@ -13,7 +13,7 @@ import { tap } from 'rxjs/operators';
 const CHECK_TIME = new HttpContextToken<boolean>(() => false);
 
 export function checkTime(){
-  return new HttpContext().set(CHECK_TIME, true)
+  return new HttpContext().set(CHECK_TIME, false)
 }
 
 @Injectable()

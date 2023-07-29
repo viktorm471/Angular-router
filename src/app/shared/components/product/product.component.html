@@ -1,0 +1,8 @@
+<app-img *ngIf="product.images.length > 0" [img]="product.images[0]"></app-img>
+<h2 class="title">{{ product.price | currency }}</h2>
+<p>{{ product.title }}</p>
+<p class="category">{{ product.category.name }}</p>
+<button [routerLink]="'/product/'+product.id">Ver detalle</button>
+<!-- MOSTRAR EL PRODUCTO CON QUERY PARAM Y NO CON OTRA VISTA  -->
+<button [routerLink]="'.'" [queryParams]="{product: product.id}">Ver detalle</button>
+<button (click)="onAddToCart()">Add cart</button>

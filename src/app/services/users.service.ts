@@ -9,11 +9,15 @@ import { User, CreateUserDTO } from './../models/user.model';
 })
 export class UsersService {
 
+ 
+
   private apiUrl = `${environment.API_URL}/api/users`;
 
   constructor(
     private http: HttpClient
   ) { }
+
+  
 
   create(dto: CreateUserDTO) {
     return this.http.post<User>(this.apiUrl, dto);
@@ -22,4 +26,7 @@ export class UsersService {
   getAll() {
     return this.http.get<User[]>(this.apiUrl);
   }
+
+  
+
 }
